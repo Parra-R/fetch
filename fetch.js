@@ -1,0 +1,21 @@
+/*
+📝 Enunciado
+Crea una función llamada searchPost(id).
+Dentro del try, concatena el id recibido en la URL de la API: https://jsonplaceholder.typicode.com/posts/ID.
+Usa Template Literals para construir la URL.
+Si la petición es exitosa, imprime el título del post en mayúsculas.
+Si ocurre un error (por ejemplo, si el ID no existe o no hay internet), el catch debe imprimir: "El post no pudo ser hallado".
+Subelo a GitHub
+*/
+
+async function searchPost(id) {
+    try {
+        const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts/ID')
+        const titulo = await respuesta.json()
+        console.log(titulo.toUpperCase())
+    } catch (error) {
+        console.error("El post no pudo ser hallado")
+    }
+}
+
+console.log(searchPost())
