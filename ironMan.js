@@ -10,7 +10,9 @@ Si quieres seleccionar tu propio super heroe, puedes revisar → https://akabab.
 
 async function obtenerVengador(nombre){
     try {
-        const respuesta = await fetch('https://akabab.github.io/superhero-api/api/id/346.json');
+        const url = `https://akabab.github.io/superhero-api/api/id/346.json`
+        
+        const respuesta = await fetch(url);
         const ironMan = await respuesta.json();
         
         console.log(`Nombre Real: ${ironMan.biography.fullName}, su inteligencia es de ${ironMan.powerstats.intelligence}`)
@@ -19,4 +21,4 @@ async function obtenerVengador(nombre){
     }
 }
 
-console.log(obtenerVengador(A-Bomb))
+obtenerVengador("Iron Man")
