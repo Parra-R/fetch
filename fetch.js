@@ -8,15 +8,32 @@ Si ocurre un error (por ejemplo, si el ID no existe o no hay internet), el catch
 Subelo a GitHub
 */
 
-async function searchPost(id) {
+// async function searchPost(id) {
+//     try {
+//         const url = `https://jsonplaceholder.typicode.com/posts/${id}`
+//         const res = await fetch(url)
+
+//         const post = await res.json()
+//         console.log(post.title)
+//     } catch (error) {
+//         console.error("El post no pudo ser hallado")
+//     }
+// }
+
+// searchPost(70)
+
+
+const searchPost = async (id) =>{
     try {
         const url = `https://jsonplaceholder.typicode.com/posts/${id}`
         const res = await fetch(url)
 
         const post = await res.json()
-        console.log(post)
+        console.log(post.title)
+
     } catch (error) {
         console.error("El post no pudo ser hallado")
+
     }
 }
 
