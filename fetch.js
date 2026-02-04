@@ -20,4 +20,4 @@ async function searchPost(id) {
     }
 }
 
-searchPost(1)
+searchPost(70)

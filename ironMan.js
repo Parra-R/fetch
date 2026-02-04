@@ -13,12 +13,12 @@ async function obtenerVengador(nombre){
         const url = `https://akabab.github.io/superhero-api/api/id/346.json`
         
         const respuesta = await fetch(url);
-        const ironMan = await respuesta.json();
+        const data = await respuesta.json();
         
-        console.log(`Nombre Real: ${ironMan.biography.fullName}, su inteligencia es de ${ironMan.powerstats.intelligence}`)
+        console.log(`Nombre Real: ${data.biography.fullName}, su inteligencia es de ${data.powerstats.intelligence}`)
     } catch (error) {
         console.error("Error al contactar con la base de datos de Avengers")
     }
 }
 
-obtenerVengador("Iron Man")
+obtenerVengador()
