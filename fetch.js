@@ -10,13 +10,14 @@ Subelo a GitHub
 
 async function searchPost(id) {
     try {
-        const respuesta = await fetch('https://jsonplaceholder.typicode.com/posts/${id}')
+        const url = `https://jsonplaceholder.typicode.com/posts/${id}`
         const res = await fetch(url)
-        const titulo = await respuesta.json()
-        console.log(titulo.toUpperCase())
+
+        const post = await res.json()
+        console.log(post)
     } catch (error) {
         console.error("El post no pudo ser hallado")
     }
 }
 
-console.log(searchPost())
+searchPost(1)
